@@ -7,7 +7,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
     <ProjectGuid>{cd0166af-e1e4-49ee-b5a7-c10e1e1b429f}</ProjectGuid>
-    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql170DatabaseSchemaProvider</DSP>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql160DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
@@ -60,11 +60,15 @@
     <Folder Include="Properties" />
     <Folder Include="dbo\" />
     <Folder Include="dbo\Tables\" />
+    <Folder Include="dbo\Programmability" />
+    <Folder Include="dbo\Programmability\Stored Procedures" />
+    <Folder Include="dbo\Programmability\Functions" />
+    <Folder Include="dbo\Programmability\Functions\Table-valued Functions" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\Language.sql" />
     <Build Include="dbo\Tables\User.sql" />
-    <Build Include="dbo\Tables\TypeToken.sql" />
+    <Build Include="dbo\Tables\TokenType.sql" />
     <Build Include="dbo\Tables\TypeAction.sql" />
     <Build Include="dbo\Tables\EmailStatus.sql" />
     <Build Include="dbo\Tables\Product.sql" />
@@ -74,5 +78,56 @@
     <Build Include="dbo\Tables\Email.sql" />
     <Build Include="dbo\Tables\UserProductAccess.sql" />
     <Build Include="dbo\Tables\LogHistory.sql" />
+    <Build Include="dbo\Programmability\Functions\Table-valued Functions\GetPaginationData.sql" />
+    <Build Include="dbo\Programmability\Functions\Table-valued Functions\SplitBigInt.sql" />
+    <Build Include="dbo\Programmability\Functions\Table-valued Functions\SplitBit.sql" />
+    <Build Include="dbo\Programmability\Functions\Table-valued Functions\SplitInt.sql" />
+    <Build Include="dbo\Programmability\Functions\Table-valued Functions\SplitTinyInt.sql" />
+    <Build Include="dbo\Programmability\Functions\Table-valued Functions\SplitVarchar.sql" />
+    <Build Include="dbo\Programmability\Stored Procedures\CreateEmail.sql" />
+    <Build Include="dbo\Programmability\Stored Procedures\CreateLogHistory.sql" />
+    <Build Include="dbo\Programmability\Stored Procedures\CreateUser.sql" />
+    <Build Include="dbo\Programmability\Stored Procedures\CreateUserProductAccess.sql" />
+    <Build Include="dbo\Programmability\Stored Procedures\CreateUserToken.sql" />
+    <Build Include="dbo\Programmability\Stored Procedures\CreateUserTraceability.sql" />
+    <Build Include="dbo\Programmability\Stored Procedures\DeleteEmail.sql" />
+    <Build Include="dbo\Programmability\Stored Procedures\DeleteUser.sql" />
+    <Build Include="dbo\Programmability\Stored Procedures\DeleteUserProductAccess.sql" />
+    <Build Include="dbo\Programmability\Stored Procedures\DeleteUserToken.sql" />
+    <Build Include="dbo\Programmability\Stored Procedures\GetEmail.sql" />
+    <Build Include="dbo\Programmability\Stored Procedures\GetEmailStatus.sql" />
+    <Build Include="dbo\Programmability\Stored Procedures\GetLanguage.sql" />
+    <Build Include="dbo\Programmability\Stored Procedures\GetLogHistory.sql" />
+    <Build Include="dbo\Programmability\Stored Procedures\GetNumberRecordsEmails.sql" />
+    <Build Include="dbo\Programmability\Stored Procedures\GetNumberRecordsUserProductAccesses.sql" />
+    <Build Include="dbo\Programmability\Stored Procedures\GetNumberRecordsUsers.sql" />
+    <Build Include="dbo\Programmability\Stored Procedures\GetNumberRecordsUserTokens.sql" />
+    <Build Include="dbo\Programmability\Stored Procedures\GetNumberRecordsUserTraceability.sql" />
+    <Build Include="dbo\Programmability\Stored Procedures\GetProduct.sql" />
+    <Build Include="dbo\Programmability\Stored Procedures\GetTokenType.sql" />
+    <Build Include="dbo\Programmability\Stored Procedures\GetTypeAction.sql" />
+    <Build Include="dbo\Programmability\Stored Procedures\GetTypeLogHistory.sql" />
+    <Build Include="dbo\Programmability\Stored Procedures\GetUser.sql" />
+    <Build Include="dbo\Programmability\Stored Procedures\GetUserProductAccess.sql" />
+    <Build Include="dbo\Programmability\Stored Procedures\GetUserToken.sql" />
+    <Build Include="dbo\Programmability\Stored Procedures\GetUserTraceability.sql" />
+    <Build Include="dbo\Programmability\Stored Procedures\ListEmails.sql" />
+    <Build Include="dbo\Programmability\Stored Procedures\ListEmailStatuses.sql" />
+    <Build Include="dbo\Programmability\Stored Procedures\ListLanguages.sql" />
+    <Build Include="dbo\Programmability\Stored Procedures\ListLogHistories.sql" />
+    <Build Include="dbo\Programmability\Stored Procedures\ListProduct.sql" />
+    <Build Include="dbo\Programmability\Stored Procedures\ListTokenTypes.sql" />
+    <Build Include="dbo\Programmability\Stored Procedures\ListTypeActions.sql" />
+    <Build Include="dbo\Programmability\Stored Procedures\ListTypeLogHistories.sql" />
+    <Build Include="dbo\Programmability\Stored Procedures\ListUserProductAccesses.sql" />
+    <Build Include="dbo\Programmability\Stored Procedures\ListUsers.sql" />
+    <Build Include="dbo\Programmability\Stored Procedures\ListUserTokens.sql" />
+    <Build Include="dbo\Programmability\Stored Procedures\ListUserTraceability.sql" />
+    <Build Include="dbo\Programmability\Stored Procedures\UpdateEmail.sql" />
+    <Build Include="dbo\Programmability\Stored Procedures\UpdateUser.sql" />
+    <Build Include="dbo\Programmability\Stored Procedures\UpdateUserProductAccess.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="AuthOn_DataBase.refactorlog" />
   </ItemGroup>
 </Project>

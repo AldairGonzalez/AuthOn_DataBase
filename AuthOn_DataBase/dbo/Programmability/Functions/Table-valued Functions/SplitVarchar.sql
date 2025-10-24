@@ -1,0 +1,8 @@
+﻿CREATE FUNCTION [dbo].[SplitVarchar]
+(
+	@list VARCHAR(MAX),
+	@delimiter VARCHAR(10)
+)
+RETURNS TABLE
+AS
+	RETURN (SELECT VALUE FROM STRING_SPLIT(@list, ','));

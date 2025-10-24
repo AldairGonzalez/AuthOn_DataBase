@@ -1,0 +1,10 @@
+﻿CREATE FUNCTION [dbo].[SplitTinyInt]
+(
+	@list VARCHAR(MAX),
+	@delimiter VARCHAR(10)
+)
+RETURNS TABLE
+AS
+	RETURN (SELECT TRY_CAST(value AS TINYINT) AS Value
+			FROM STRING_SPLIT(@list, @delimiter)
+			WHERE TRY_CAST(value AS INT) BETWEEN 0 AND 255);
