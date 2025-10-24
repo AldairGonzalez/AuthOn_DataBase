@@ -1,7 +1,8 @@
 ﻿CREATE TABLE [dbo].[Product] (
-    [ProductId] INT           IDENTITY (1, 1) NOT NULL,
-    [Name]      VARCHAR (250) NOT NULL,
-    [Code]      VARCHAR (250) NOT NULL,
-    CONSTRAINT [PK_Product] PRIMARY KEY CLUSTERED ([ProductId] ASC)
+    [ProductId]     BIGINT IDENTITY (1, 1)  NOT NULL,
+    [Name]          NVARCHAR (50)           NOT NULL,
+    [Description]   NVARCHAR (MAX)              NULL,
+    [Code]          NVARCHAR (30)           NOT NULL,
+    CONSTRAINT [PK_Product] PRIMARY KEY CLUSTERED ([ProductId] ASC),
+    CONSTRAINT [UQ_Product_Code] UNIQUE ([Code])
 );
-

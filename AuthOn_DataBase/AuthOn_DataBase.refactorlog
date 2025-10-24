@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="3f5318ca-02bc-45fb-932b-a1354740f70b" ChangeDateTime="10/23/2025 01:45:30">
+    <Property Name="ElementName" Value="[dbo].[TypeToken].[TypeTokenId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[TypeToken]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="TokenTypeId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="44036462-fcc4-47c2-be9e-004b9b825854" ChangeDateTime="10/23/2025 01:54:19">
+    <Property Name="ElementName" Value="[dbo].[TypeToken].[TokenExpirationInHours]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[TypeToken]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ExpirationInHours" />
+  </Operation>
+</Operations>
