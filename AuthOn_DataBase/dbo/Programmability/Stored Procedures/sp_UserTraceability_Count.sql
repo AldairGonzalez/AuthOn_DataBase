@@ -1,0 +1,15 @@
+﻿CREATE PROCEDURE [dbo].[sp_UserTraceability_Count]
+    @UserId BIGINT = NULL,
+    @PerformedById BIGINT = NULL,
+    @TypeActionId TINYINT = NULL
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT COUNT(*)
+    FROM [dbo].[UserTraceability]
+    WHERE
+        (@UserId IS NULL OR UserId = @UserId) AND
+        (@PerformedById IS NULL OR PerformedById = @PerformedById) AND
+        (@TypeActionId IS NULL OR TypeActionId = @TypeActionId);
+END
