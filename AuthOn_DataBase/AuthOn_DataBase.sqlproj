@@ -121,6 +121,15 @@
     <Build Include="dbo\Programmability\Stored Procedures\sp_User_Update.sql" />
     <Build Include="dbo\Programmability\Stored Procedures\sp_UserProductAccess_Update.sql" />
     <Build Include="dbo\Programmability\Stored Procedures\sp_UserToken_Update.sql" />
+    <Build Include="dbo\Programmability\Stored Procedures\sp_EmailStatus_List.sql" />
+    <Build Include="dbo\Programmability\Stored Procedures\sp_Language_List.sql" />
+    <Build Include="dbo\Programmability\Stored Procedures\sp_LogHistory_Delete.sql" />
+    <Build Include="dbo\Programmability\Stored Procedures\sp_LogHistory_Count.sql" />
+    <Build Include="dbo\Programmability\Stored Procedures\sp_Product_List.sql" />
+    <Build Include="dbo\Programmability\Stored Procedures\sp_TokenType_List.sql" />
+    <Build Include="dbo\Programmability\Stored Procedures\sp_TypeAction_List.sql" />
+    <Build Include="dbo\Programmability\Stored Procedures\sp_TypeLogHistory_List.sql" />
+    <Build Include="dbo\Programmability\Stored Procedures\sp_UserTraceability_Delete.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="AuthOn_DataBase.refactorlog" />
