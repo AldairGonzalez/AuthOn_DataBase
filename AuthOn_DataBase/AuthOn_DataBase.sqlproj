@@ -64,6 +64,7 @@
     <Folder Include="dbo\Programmability\Stored Procedures" />
     <Folder Include="dbo\Programmability\Functions" />
     <Folder Include="dbo\Programmability\Functions\Table-valued Functions" />
+    <Folder Include="Scripts" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\Language.sql" />
@@ -130,8 +131,18 @@
     <Build Include="dbo\Programmability\Stored Procedures\sp_TypeAction_List.sql" />
     <Build Include="dbo\Programmability\Stored Procedures\sp_TypeLogHistory_List.sql" />
     <Build Include="dbo\Programmability\Stored Procedures\sp_UserTraceability_Delete.sql" />
+    <None Include="Scripts\01_EmailStatus.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="AuthOn_DataBase.refactorlog" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Script.PostDeployment.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Scripts\02_Language.sql" />
+    <None Include="Scripts\03_TokenType.sql" />
+    <None Include="Scripts\04_TypeAction.sql" />
+    <None Include="Scripts\05_TypeLogHistory.sql" />
   </ItemGroup>
 </Project>
