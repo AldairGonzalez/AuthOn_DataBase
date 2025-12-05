@@ -9,8 +9,8 @@
     @IsAdmin BIT,
     @EliminationProcess BIT,
     @LanguageId TINYINT,
-    @securityCode NVARCHAR(6) = NULL,
-    @securityCodeExpiration DATETIME2 = NULL,
+    @SecurityCode NVARCHAR(6) = NULL,
+    @SecurityCodeExpiration DATETIME2 = NULL,
     @CreationRecordMoment DATETIME2,
     @UpdateRecordMoment DATETIME2 = NULL
 AS
@@ -44,8 +44,8 @@ BEGIN
         @IsAdmin,
         @EliminationProcess,
         @LanguageId,
-        @securityCode,
-        @securityCodeExpiration,
+        @SecurityCode,
+        @SecurityCodeExpiration,
         @CreationRecordMoment,
         @UpdateRecordMoment
     );
