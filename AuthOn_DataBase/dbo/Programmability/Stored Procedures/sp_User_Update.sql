@@ -9,6 +9,8 @@
     @IsActive TINYINT,
     @EliminationProcess TINYINT,
     @LanguageId TINYINT,
+    @securityCode NVARCHAR(6),
+    @securityCodeExpiration DATETIME2,
     @UpdateRecordMoment DATETIME2
 AS
 BEGIN
@@ -25,6 +27,8 @@ BEGIN
         IsActive = @IsActive,
         EliminationProcess = @EliminationProcess,
         LanguageId = @LanguageId,
+        SecurityCode = @securityCode,
+        SecurityCodeExpiration = @securityCodeExpiration,
         UpdateRecordMoment = @UpdateRecordMoment
     WHERE UserId = @UserId;
 
