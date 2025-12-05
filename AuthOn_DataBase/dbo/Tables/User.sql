@@ -10,6 +10,8 @@
     [IsAdmin]                       BIT                     NOT NULL,
     [EliminationProcess]            BIT                     NOT NULL,
     [LanguageId]                    TINYINT                 NOT NULL,
+    [SecurityCode]		            NVARCHAR(6)                 NULL,
+    [SecurityCodeExpiration]        DATETIME2                   NULL,
     [CreationRecordMoment]          DATETIME2               NOT NULL,
     [UpdateRecordMoment]            DATETIME2                   NULL,
     CONSTRAINT [PK_User] PRIMARY KEY CLUSTERED ([UserId] ASC),
