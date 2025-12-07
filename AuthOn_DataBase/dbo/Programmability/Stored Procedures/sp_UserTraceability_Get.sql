@@ -5,6 +5,7 @@ BEGIN
     SET NOCOUNT ON;
 
     SELECT *
-    FROM [dbo].[UserTraceability]
-    WHERE UserTraceabilityId = @UserTraceabilityId;
+    FROM [dbo].[UserTraceability] WITH(NOLOCK)
+    WHERE [UserTraceabilityId] = @UserTraceabilityId;
 END
+GO

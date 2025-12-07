@@ -1,6 +1,4 @@
-﻿SET IDENTITY_INSERT [dbo].[TypeLogHistory] ON;
-
-MERGE INTO [dbo].[TypeLogHistory] AS Target
+﻿MERGE INTO [dbo].[TypeLogHistory] AS Target
 USING (VALUES
     (1, 'INFO'),
     (2, 'WARNING'),
@@ -8,11 +6,7 @@ USING (VALUES
     (4, 'CRITICAL')
 ) AS Source ([TypeLogHistoryId], [Code])
 ON (Target.[TypeLogHistoryId] = Source.[TypeLogHistoryId])
-
 WHEN MATCHED THEN
     UPDATE SET Target.[Code] = Source.[Code]
-
 WHEN NOT MATCHED BY TARGET THEN
     INSERT ([TypeLogHistoryId], [Code]) VALUES (Source.[TypeLogHistoryId], Source.[Code]);
-
-SET IDENTITY_INSERT [dbo].[TypeLogHistory] OFF;

@@ -1,27 +1,22 @@
 ﻿CREATE PROCEDURE [dbo].[sp_UserProductAccess_Create]
     @ProductId BIGINT,
-    @UserId BIGINT,
-    @IsActive TINYINT,
-    @CreationRecordMoment DATETIME2,
-    @UpdateRecordMoment DATETIME2 = NULL
+    @UserId    BIGINT,
+    @IsActive  BIT = 1
 AS
 BEGIN
     SET NOCOUNT ON;
 
     INSERT INTO [dbo].[UserProductAccess] (
-        ProductId, 
-        UserId, 
-        IsActive,
-        CreationRecordMoment, 
-        UpdateRecordMoment
+        [ProductId], 
+        [UserId], 
+        [IsActive]
     )
     VALUES (
         @ProductId, 
         @UserId, 
-        @IsActive,
-        @CreationRecordMoment, 
-        @UpdateRecordMoment
+        @IsActive
     );
 
-    SELECT SCOPE_IDENTITY();
+    SELECT CAST(SCOPE_IDENTITY() AS BIGINT);
 END
+GO

@@ -4,6 +4,9 @@ BEGIN
     SET NOCOUNT ON;
 
     SELECT
-		*
-	FROM [dbo].[EmailStatus]
+        [EmailStatusId],
+        [Code]
+    FROM [dbo].[EmailStatus] WITH(NOLOCK)
+    ORDER BY [EmailStatusId] ASC;
 END
+GO

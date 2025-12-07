@@ -4,6 +4,10 @@ BEGIN
     SET NOCOUNT ON;
 
     SELECT
-		*
-	FROM [dbo].[TokenType]
+        [TokenTypeId],
+        [Code],
+        [DurationInMinutes]
+    FROM [dbo].[TokenType] WITH(NOLOCK)
+    ORDER BY [TokenTypeId] ASC;
 END
+GO

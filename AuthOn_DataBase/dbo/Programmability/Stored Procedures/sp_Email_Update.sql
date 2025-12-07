@@ -1,18 +1,18 @@
 ﻿CREATE PROCEDURE [dbo].[sp_Email_Update]
-    @EmailId BIGINT,
-    @EmailStatusId BIGINT,
-    @Seen BIT,
-    @UpdateRecordMoment DATETIME2
+    @EmailId       BIGINT,
+    @EmailStatusId TINYINT,
+    @Seen          BIT
 AS
 BEGIN
     SET NOCOUNT ON;
 
     UPDATE [dbo].[Email]
     SET
-        EmailStatusId = @EmailStatusId,
-        Seen = @Seen,
-        UpdateRecordMoment = @UpdateRecordMoment
-    WHERE EmailId = @EmailId;
+        [EmailStatusId]      = @EmailStatusId,
+        [Seen]               = @Seen,
+        [UpdateRecordMoment] = SYSUTCDATETIME()
+    WHERE [EmailId] = @EmailId;
 
     SELECT @@ROWCOUNT;
 END
+GO

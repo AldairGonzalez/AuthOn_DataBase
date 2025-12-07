@@ -5,6 +5,7 @@ BEGIN
     SET NOCOUNT ON;
 
     SELECT *
-    FROM [dbo].[LogHistory]
+    FROM [dbo].[LogHistory] WITH(NOLOCK)
     WHERE LogHistoryId = @LogHistoryId;
 END
+GO
