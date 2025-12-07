@@ -4,6 +4,9 @@ BEGIN
     SET NOCOUNT ON;
 
     SELECT
-		*
-	FROM [dbo].[Language]
+        [LanguageId],
+        [Code]
+    FROM [dbo].[Language] WITH(NOLOCK)
+    ORDER BY [LanguageId] ASC;
 END
+GO

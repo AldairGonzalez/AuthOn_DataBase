@@ -4,6 +4,9 @@ BEGIN
     SET NOCOUNT ON;
 
     SELECT
-		*
-	FROM [dbo].[TypeAction]
+        [TypeActionId],
+        [Code]
+    FROM [dbo].[TypeAction] WITH(NOLOCK)
+    ORDER BY [TypeActionId] ASC;
 END
+GO

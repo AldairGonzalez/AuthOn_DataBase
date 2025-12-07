@@ -1,13 +1,16 @@
 ﻿CREATE PROCEDURE [dbo].[sp_Language_Get]
-	@LanguageId TINYINT = NULL,
-	@Code NVARCHAR(30) = NULL
+    @LanguageId TINYINT     = NULL,
+    @Code       VARCHAR(50) = NULL
 AS
 BEGIN
-	SET NOCOUNT ON;
+    SET NOCOUNT ON;
 
-	SELECT
-		*
-	FROM [dbo].[Language]
-	WHERE	(@LanguageId IS NULL OR LanguageId = @LanguageId) AND
-			(@Code IS NULL OR Code = @Code)
+    SELECT
+        [LanguageId],
+        [Code]
+    FROM [dbo].[Language] WITH(NOLOCK)
+    WHERE 
+        (@LanguageId IS NULL OR [LanguageId] = @LanguageId) AND
+        (@Code IS NULL OR [Code] = @Code);
 END
+GO

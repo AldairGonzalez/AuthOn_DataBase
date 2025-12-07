@@ -1,33 +1,28 @@
 ﻿CREATE PROCEDURE [dbo].[sp_Email_Create]
-    @Subject NVARCHAR(MAX),
-    @Recipients NVARCHAR(MAX),
-    @Body NVARCHAR(MAX),
+    @Subject       NVARCHAR(500),
+    @Recipients    NVARCHAR(MAX),
+    @Body          NVARCHAR(MAX),
     @EmailStatusId TINYINT,
-    @Seen BIT,
-    @CreationRecordMoment DATETIME2,
-    @UpdateRecordMoment DATETIME2 = NULL
+    @Seen          BIT
 AS
 BEGIN
     SET NOCOUNT ON;
 
     INSERT INTO [dbo].[Email] (
         [Subject], 
-        Recipients, 
-        Body,
-        EmailStatusId, 
-        Seen,
-        CreationRecordMoment, 
-        UpdateRecordMoment
+        [Recipients], 
+        [Body],
+        [EmailStatusId], 
+        [Seen]
     )
     VALUES (
         @Subject, 
         @Recipients, 
         @Body,
         @EmailStatusId, 
-        @Seen,
-        @CreationRecordMoment, 
-        @UpdateRecordMoment
+        @Seen
     );
 
-    SELECT SCOPE_IDENTITY();
+    SELECT CAST(SCOPE_IDENTITY() AS BIGINT);
 END
+GO

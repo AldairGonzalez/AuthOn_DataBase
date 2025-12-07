@@ -1,30 +1,28 @@
 ﻿CREATE PROCEDURE [dbo].[sp_UserTraceability_Create]
-    @UserId BIGINT,
+    @UserId        BIGINT,
     @PerformedById BIGINT = NULL,
-    @TypeActionId TINYINT,
-    @Moment DATETIME2,
-    @IpAddress NVARCHAR(45) = NULL,
-    @Observation NVARCHAR(MAX) = NULL
+    @TypeActionId  TINYINT,
+    @IpAddress     VARCHAR(45) = NULL,
+    @Observation   VARCHAR(500) = NULL
 AS
 BEGIN
     SET NOCOUNT ON;
 
     INSERT INTO [dbo].[UserTraceability] (
-        UserId,
-        PerformedById,
-        TypeActionId,
-        Moment,
-        IpAddress,
-        Observation
+        [UserId],
+        [PerformedById],
+        [TypeActionId],
+        [IpAddress],
+        [Observation]
     )
     VALUES (
         @UserId,
         @PerformedById,
         @TypeActionId,
-        @Moment,
         @IpAddress,
         @Observation
     );
 
-    SELECT SCOPE_IDENTITY();
+    SELECT CAST(SCOPE_IDENTITY() AS BIGINT);
 END
+GO

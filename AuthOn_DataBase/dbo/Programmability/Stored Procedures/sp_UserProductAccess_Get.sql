@@ -5,6 +5,7 @@ BEGIN
     SET NOCOUNT ON;
 
     SELECT *
-    FROM [dbo].[UserProductAccess]
-    WHERE UserProductAccessId = @UserProductAccessId;
+    FROM [dbo].[UserProductAccess] WITH(NOLOCK)
+    WHERE [UserProductAccessId] = @UserProductAccessId;
 END
+GO

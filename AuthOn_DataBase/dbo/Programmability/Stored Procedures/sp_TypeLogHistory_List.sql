@@ -4,6 +4,9 @@ BEGIN
     SET NOCOUNT ON;
 
     SELECT
-		*
-	FROM [dbo].[TypeLogHistory]
+        [TypeLogHistoryId],
+        [Code]
+    FROM [dbo].[TypeLogHistory] WITH(NOLOCK)
+    ORDER BY [TypeLogHistoryId] ASC;
 END
+GO

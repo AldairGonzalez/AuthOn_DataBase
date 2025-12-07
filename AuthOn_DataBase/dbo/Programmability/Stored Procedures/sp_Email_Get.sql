@@ -5,6 +5,7 @@ BEGIN
     SET NOCOUNT ON;
 
     SELECT *
-    FROM [dbo].[Email]
+    FROM [dbo].[Email] WITH(NOLOCK)
     WHERE EmailId = @EmailId;
 END
+GO

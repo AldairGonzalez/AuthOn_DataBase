@@ -80,11 +80,6 @@
     <Build Include="dbo\Tables\UserProductAccess.sql" />
     <Build Include="dbo\Tables\LogHistory.sql" />
     <Build Include="dbo\Programmability\Functions\Table-valued Functions\fn_PaginationData_Get.sql" />
-    <Build Include="dbo\Programmability\Functions\Table-valued Functions\fn_SplitBigInt.sql" />
-    <Build Include="dbo\Programmability\Functions\Table-valued Functions\fn_SplitBit.sql" />
-    <Build Include="dbo\Programmability\Functions\Table-valued Functions\fn_SplitInt.sql" />
-    <Build Include="dbo\Programmability\Functions\Table-valued Functions\fn_SplitTinyInt.sql" />
-    <Build Include="dbo\Programmability\Functions\Table-valued Functions\fn_SplitVarchar.sql" />
     <Build Include="dbo\Programmability\Stored Procedures\sp_Email_Create.sql" />
     <Build Include="dbo\Programmability\Stored Procedures\sp_LogHistory_Create.sql" />
     <Build Include="dbo\Programmability\Stored Procedures\sp_User_Create.sql" />
@@ -132,6 +127,16 @@
     <Build Include="dbo\Programmability\Stored Procedures\sp_TypeLogHistory_List.sql" />
     <Build Include="dbo\Programmability\Stored Procedures\sp_UserTraceability_Delete.sql" />
     <None Include="Scripts\01_EmailStatus.sql" />
+    <Build Include="dbo\Tables\UserAuthentication.sql" />
+    <Build Include="dbo\Programmability\Stored Procedures\sp_Email_GetPendingToSend.sql" />
+    <Build Include="dbo\Programmability\Stored Procedures\sp_Email_Fail.sql" />
+    <Build Include="dbo\Programmability\Stored Procedures\sp_Product_Create.sql" />
+    <Build Include="dbo\Programmability\Stored Procedures\sp_Product_Update.sql" />
+    <Build Include="dbo\Programmability\Stored Procedures\sp_UserVerification_Upsert.sql" />
+    <Build Include="dbo\Programmability\Stored Procedures\sp_UserVerification_Get.sql" />
+    <Build Include="dbo\Programmability\Stored Procedures\sp_User_ChangePassword.sql" />
+    <Build Include="dbo\Programmability\Stored Procedures\sp_UserProductAccess_Check.sql" />
+    <Build Include="dbo\Programmability\Stored Procedures\sp_UserToken_GetByToken.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="AuthOn_DataBase.refactorlog" />

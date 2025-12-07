@@ -5,6 +5,7 @@ BEGIN
     SET NOCOUNT ON;
 
     SELECT *
-    FROM [dbo].[UserToken]
-    WHERE UserTokenId = @UserTokenId;
+    FROM [dbo].[UserToken] WITH(NOLOCK)
+    WHERE [UserTokenId] = @UserTokenId;
 END
+GO

@@ -7,5 +7,6 @@ BEGIN
     DELETE FROM [dbo].[LogHistory]
     WHERE LogHistoryId = @LogHistoryId;
 
-    SELECT CAST(CASE WHEN @@ROWCOUNT > 0 THEN 1 ELSE 0 END AS BIT);
+    SELECT @@ROWCOUNT;
 END
+GO
