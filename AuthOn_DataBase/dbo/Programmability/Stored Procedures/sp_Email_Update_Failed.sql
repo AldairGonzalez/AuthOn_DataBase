@@ -1,12 +1,11 @@
-﻿CREATE PROCEDURE [dbo].[sp_Email_Fail]
-    @EmailId BIGINT
+﻿CREATE PROCEDURE [dbo].[sp_Email_Update_Failed]
+    @EmailId BIGINT,
+    @FailedEmailStatusId TINYINT
 AS
 BEGIN
-    SET NOCOUNT ON;
-
     UPDATE [dbo].[Email]
     SET 
-        [EmailStatusId] = 3,
+        [EmailStatusId] = @FailedEmailStatusId,
         [SendingAttempts] = [SendingAttempts] + 1,
         [UpdateRecordMoment] = SYSUTCDATETIME()
     WHERE [EmailId] = @EmailId;

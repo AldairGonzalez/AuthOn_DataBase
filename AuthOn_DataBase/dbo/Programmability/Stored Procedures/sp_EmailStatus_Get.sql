@@ -5,12 +5,18 @@ AS
 BEGIN
     SET NOCOUNT ON;
 
-    SELECT
+    IF @EmailStatusId IS NULL AND @Code IS NULL
+    BEGIN
+        RETURN;
+    END
+
+    SELECT TOP 1
         [EmailStatusId],
         [Code]
     FROM [dbo].[EmailStatus] WITH(NOLOCK)
     WHERE 
-        (@EmailStatusId IS NULL OR [EmailStatusId] = @EmailStatusId) AND
-        (@Code IS NULL OR [Code] = @Code);
+        (@EmailStatusId IS NOT NULL AND [EmailStatusId] = @EmailStatusId)
+        OR
+        (@Code IS NOT NULL AND [Code] = @Code);
 END
 GO

@@ -5,13 +5,19 @@ AS
 BEGIN
     SET NOCOUNT ON;
 
-    SELECT 
+    IF @TokenTypeId IS NULL AND @Code IS NULL
+    BEGIN
+        RETURN;
+    END
+
+    SELECT TOP 1
         [TokenTypeId],
         [Code],
         [DurationInMinutes]
     FROM [dbo].[TokenType] WITH(NOLOCK)
     WHERE 
-        (@TokenTypeId IS NULL OR [TokenTypeId] = @TokenTypeId) AND
-        (@Code IS NULL OR [Code] = @Code);
+        (@TokenTypeId IS NOT NULL AND [TokenTypeId] = @TokenTypeId)
+        OR
+        (@Code IS NOT NULL AND [Code] = @Code);
 END
 GO

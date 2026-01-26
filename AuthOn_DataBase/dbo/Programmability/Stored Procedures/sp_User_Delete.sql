@@ -2,15 +2,7 @@
     @UserId BIGINT
 AS
 BEGIN
-    SET NOCOUNT ON;
-
-    UPDATE [dbo].[User]
-    SET 
-        [IsActive]           = 0,
-        [EliminationProcess] = 1,
-        [UpdateRecordMoment] = SYSUTCDATETIME()
+    DELETE FROM [dbo].[User]
     WHERE [UserId] = @UserId;
-    
-    SELECT @@ROWCOUNT;
 END
 GO

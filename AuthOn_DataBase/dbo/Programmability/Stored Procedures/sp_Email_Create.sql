@@ -2,8 +2,7 @@
     @Subject       NVARCHAR(500),
     @Recipients    NVARCHAR(MAX),
     @Body          NVARCHAR(MAX),
-    @EmailStatusId TINYINT,
-    @Seen          BIT
+    @EmailStatusId TINYINT
 AS
 BEGIN
     SET NOCOUNT ON;
@@ -12,15 +11,13 @@ BEGIN
         [Subject], 
         [Recipients], 
         [Body],
-        [EmailStatusId], 
-        [Seen]
+        [EmailStatusId]
     )
     VALUES (
         @Subject, 
         @Recipients, 
         @Body,
-        @EmailStatusId, 
-        @Seen
+        @EmailStatusId
     );
 
     SELECT CAST(SCOPE_IDENTITY() AS BIGINT);

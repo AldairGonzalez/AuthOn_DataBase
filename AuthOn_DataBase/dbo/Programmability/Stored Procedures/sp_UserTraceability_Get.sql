@@ -4,7 +4,14 @@ AS
 BEGIN
     SET NOCOUNT ON;
 
-    SELECT *
+    SELECT 
+        [UserTraceabilityId],
+        [UserId],
+        [PerformedById],
+        [TypeActionId],
+        [IpAddress],
+        [Observation],
+        [CreationRecordMoment]
     FROM [dbo].[UserTraceability] WITH(NOLOCK)
     WHERE [UserTraceabilityId] = @UserTraceabilityId;
 END

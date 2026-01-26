@@ -5,12 +5,18 @@ AS
 BEGIN
     SET NOCOUNT ON;
 
-    SELECT
+    IF @LanguageId IS NULL AND @Code IS NULL
+    BEGIN
+        RETURN;
+    END
+
+    SELECT TOP 1
         [LanguageId],
         [Code]
     FROM [dbo].[Language] WITH(NOLOCK)
     WHERE 
-        (@LanguageId IS NULL OR [LanguageId] = @LanguageId) AND
-        (@Code IS NULL OR [Code] = @Code);
+        (@LanguageId IS NOT NULL AND [LanguageId] = @LanguageId)
+        OR
+        (@Code IS NOT NULL AND [Code] = @Code);
 END
 GO
