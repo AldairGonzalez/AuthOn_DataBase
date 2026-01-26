@@ -4,8 +4,17 @@ AS
 BEGIN
     SET NOCOUNT ON;
 
-    SELECT *
-    FROM [dbo].[Email] WITH(NOLOCK)
+    SELECT 
+        [EmailId],
+        [Subject],
+        [Recipients],
+        [Body],
+        [EmailStatusId],
+        [Seen],
+        [SendingAttempts],
+        [CreationRecordMoment],
+        [UpdateRecordMoment]
+    FROM [dbo].[Email]
     WHERE EmailId = @EmailId;
 END
 GO

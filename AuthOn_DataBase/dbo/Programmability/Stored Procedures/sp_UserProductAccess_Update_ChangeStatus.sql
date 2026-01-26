@@ -1,10 +1,8 @@
-﻿CREATE PROCEDURE [dbo].[sp_UserProductAccess_Update]
+﻿CREATE PROCEDURE [dbo].[sp_UserProductAccess_Update_ChangeStatus]
     @UserProductAccessId BIGINT,
     @IsActive            BIT
 AS
 BEGIN
-    SET NOCOUNT ON;
-
     UPDATE [dbo].[UserProductAccess]
     SET
         [IsActive]           = @IsActive,

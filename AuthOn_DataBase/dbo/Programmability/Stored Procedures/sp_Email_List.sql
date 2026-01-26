@@ -21,7 +21,16 @@ BEGIN
     SELECT @Offset = Offset, @Limit = Limit 
     FROM [dbo].[fn_PaginationData_Get](@PageIndex, @PageSize, @TotalRecords);
 
-    SELECT *
+    SELECT 
+        [EmailId],
+        [Subject],
+        [Recipients],
+        [Body],
+        [EmailStatusId],
+        [Seen],
+        [SendingAttempts],
+        [CreationRecordMoment],
+        [UpdateRecordMoment]
     FROM [dbo].[Email] WITH(NOLOCK)
     WHERE
         (@Subject IS NULL OR [Subject] LIKE '%' + @Subject + '%') AND

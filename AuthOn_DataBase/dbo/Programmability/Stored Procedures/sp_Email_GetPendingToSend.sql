@@ -1,6 +1,8 @@
 ﻿CREATE PROCEDURE [dbo].[sp_Email_GetPendingToSend]
-    @MaxRetries TINYINT = 3,
-    @BatchSize  INT = 50
+    @PendingEmailStatusId TINYINT,
+    @FailedEmailStatusId TINYINT,
+    @MaxRetries TINYINT,
+    @BatchSize  INT
 AS
 BEGIN
     SET NOCOUNT ON;
@@ -10,12 +12,19 @@ BEGIN
         [Subject],
         [Recipients],
         [Body],
-        [SendingAttempts]
+        [EmailStatusId],
+        [Seen],
+        [SendingAttempts],
+        [CreationRecordMoment],
+        [UpdateRecordMoment]
     FROM [dbo].[Email] WITH(NOLOCK)
     WHERE 
-        ([EmailStatusId] = 1) 
+    (
+        [EmailStatusId] = @PendingEmailStatusId
         OR 
-        ([EmailStatusId] = 3 AND [SendingAttempts] < @MaxRetries)
+        ([EmailStatusId] = @FailedEmailStatusId AND [SendingAttempts] < @MaxRetries)
+    )
+    AND [Seen] = 0
     ORDER BY [SendingAttempts] ASC, [CreationRecordMoment] ASC;
 END
 GO

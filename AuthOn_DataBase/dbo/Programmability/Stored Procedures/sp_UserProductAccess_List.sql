@@ -20,7 +20,13 @@ BEGIN
     SELECT @Offset = Offset, @Limit = Limit 
     FROM [dbo].[fn_PaginationData_Get](@PageIndex, @PageSize, @TotalRecords);
 
-    SELECT *
+    SELECT 
+        [UserProductAccessId],
+        [ProductId],
+        [UserId],
+        [IsActive],
+        [CreationRecordMoment],
+        [UpdateRecordMoment]
     FROM [dbo].[UserProductAccess] WITH(NOLOCK)
     WHERE
         (@ProductId IS NULL OR [ProductId] = @ProductId) AND

@@ -5,12 +5,18 @@ AS
 BEGIN
     SET NOCOUNT ON;
 
-    SELECT 
+    IF @TypeActionId IS NULL AND @Code IS NULL
+    BEGIN
+        RETURN;
+    END
+
+    SELECT TOP 1
         [TypeActionId],
         [Code]
     FROM [dbo].[TypeAction] WITH(NOLOCK)
     WHERE 
-        (@TypeActionId IS NULL OR [TypeActionId] = @TypeActionId) AND
-        (@Code IS NULL OR [Code] = @Code);
+        (@TypeActionId IS NOT NULL AND [TypeActionId] = @TypeActionId)
+        OR
+        (@Code IS NOT NULL AND [Code] = @Code);
 END
 GO

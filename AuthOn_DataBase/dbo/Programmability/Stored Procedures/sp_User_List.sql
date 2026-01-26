@@ -22,7 +22,21 @@ BEGIN
     SELECT @Offset = Offset, @Limit = Limit 
     FROM [dbo].[fn_PaginationData_Get](@PageIndex, @PageSize, @TotalRecords);
 
-    SELECT *
+    SELECT 
+        [UserId],
+        [UserName],
+        [Email],
+        [PasswordHash],
+        [LanguageId],
+        [TwoFactorEnabled],
+        [IsActive],
+        [IsAdmin],
+        [EmailConfirmed],
+        [AuthenticationAttempts],
+        [ChangePasswordOnNextSignIn],
+        [EliminationProcess],
+        [CreationRecordMoment],
+        [UpdateRecordMoment]
     FROM [dbo].[User] WITH(NOLOCK)
     WHERE
         (@UserName IS NULL OR [UserName] LIKE '%' + @UserName + '%') AND

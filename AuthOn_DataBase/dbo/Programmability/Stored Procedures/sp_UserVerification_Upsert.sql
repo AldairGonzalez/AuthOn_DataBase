@@ -4,8 +4,6 @@
     @SecurityCodeExpiration DATETIME2(0)
 AS
 BEGIN
-    SET NOCOUNT ON;
-
     MERGE INTO [dbo].[UserVerification] AS Target
     USING (VALUES (@UserId, @SecurityCode, @SecurityCodeExpiration)) 
     AS Source ([UserId], [SecurityCode], [Expiration])

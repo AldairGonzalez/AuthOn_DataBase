@@ -4,7 +4,12 @@ AS
 BEGIN
     SET NOCOUNT ON;
 
-    SELECT *
+    SELECT 
+        [UserId],
+        [SecurityCode],
+        [SecurityCodeExpiration],
+        [LastSentAt],
+        [FailedAttempts]
     FROM [dbo].[UserVerification] WITH(NOLOCK)
     WHERE [UserId] = @UserId;
 END

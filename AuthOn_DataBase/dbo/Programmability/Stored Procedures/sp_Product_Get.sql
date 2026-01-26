@@ -5,7 +5,12 @@ AS
 BEGIN
     SET NOCOUNT ON;
 
-    SELECT
+    IF @ProductId IS NULL AND @Code IS NULL
+    BEGIN
+        RETURN;
+    END
+
+    SELECT TOP 1
         [ProductId],
         [Code],
         [Name],
@@ -16,7 +21,8 @@ BEGIN
         [UpdateRecordMoment]
     FROM [dbo].[Product] WITH(NOLOCK)
     WHERE 
-        (@ProductId IS NULL OR [ProductId] = @ProductId) AND
-        (@Code IS NULL OR [Code] = @Code);
+        (@ProductId IS NOT NULL AND [ProductId] = @ProductId)
+        OR
+        (@Code IS NOT NULL AND [Code] = @Code);
 END
 GO
